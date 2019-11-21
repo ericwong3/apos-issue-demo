@@ -20,7 +20,36 @@ var apos = require('apostrophe')({
     // If a template is not found somewhere else, serve it from the top-level
     // `views/` folder of the project
 
-    'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') }
+    'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
 
+    'apostrophe-workflow': {
+      prefixes: true,
+      locales: [
+        {
+          name: 'default',
+          label: 'Default',
+          private: true,
+          children: [
+            {
+              name: 'en',
+              label: 'England'
+            },
+            {
+              name: 'fr',
+              label: 'France'
+            }
+          ]
+        },
+      ],
+      defaultLocale: 'en',
+      // IMPORTANT: if you follow the examples below,
+      // be sure to set this
+      alias: 'workflow'
+    },
+
+    'locations': {},
+    'locations-pages': {},
+    'news': {},
+    'news-pages': {},
   }
 });

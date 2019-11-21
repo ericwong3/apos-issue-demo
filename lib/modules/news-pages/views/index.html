@@ -1,0 +1,7 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+  {% for news in data.pieces %}
+    News: {{ news|json }}<br>
+  {% endfor %}
+{% endblock %}

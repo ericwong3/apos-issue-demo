@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  {% for location in data.pieces %}
+    Location: {{ location|json }}<br>
+  {% endfor %}
+{% endblock %}
